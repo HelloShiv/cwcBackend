@@ -1,6 +1,10 @@
 import connectDB from './db/index.js';
 import dotenv from 'dotenv';
 import { app } from './app.js';
+import { TLSSocket } from 'tls'
+
+const tlsSocket = new TLSSocket();
+tlsSocket.setMaxListeners(50);
 
 dotenv.config({
     path: './env'
